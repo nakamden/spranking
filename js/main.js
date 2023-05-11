@@ -310,15 +310,14 @@ function displayRankChange(d) {
 // Returns the change for current contestants, or shows elimination
 function getRankInfo(d) {
     if (d.specialNote != "") {
-        return d.specialNote;
-    }
-    if (d.ranking.length == 0) {
-        return "Withdrew from show";
+        return "Withdrew";
     }
     if (d.isEliminated) {
-        return "Eliminated in Episode " + episodes[d.ranking.length - 1];
+        //return "Eliminated in Episode " + episodes[d.ranking.length - 1];
+        return;
     }
-    return "Current PLANET TOP6, Rank " + d.currentRank + " " + displayRankChange(d);
+    return d.currentRank + " " + displayRankChange(d);
+    //return "Wanna One Member, Rank " + d.currentRank + " " + displayRankChange(d);
 }
 
 function updateNotes(d) {
