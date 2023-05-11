@@ -13,7 +13,7 @@ var padding = 40;
 var middlePadding = (padding * 2) + 100;
 var width = $(window).width() - middlePadding - CHART_WIDTH - 30;
 
-var episodes = [1, 2, 3, 4, 5];
+var episodes = [1, 2, 3, 5, 6];
 var totalData;
 var dFirst;
 
@@ -32,7 +32,7 @@ var svg = d3.select("#plot").append("svg")
     .attr("width", width + padding * 2);
 
 var scaleX = d3.scaleLinear().domain([0, episodes.length - 1]).range([0, width]);
-var scaleY = d3.scaleLinear().domain([0, 30]).range([0, height]);
+var scaleY = d3.scaleLinear().domain([0, 99]).range([0, height]);
 var plot = svg.append("g").attr("transform", "translate(" + padding + "," + padding + ")");
 
 setXAxis();
@@ -318,7 +318,7 @@ function getRankInfo(d) {
     if (d.isEliminated) {
         return "Eliminated in Episode " + episodes[d.ranking.length - 1];
     }
-    return "Wanna One Member, Rank " + d.currentRank + " " + displayRankChange(d);
+    return "Current PLANET TOP6, Rank " + d.currentRank + " " + displayRankChange(d);
 }
 
 function updateNotes(d) {
