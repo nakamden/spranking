@@ -234,7 +234,7 @@ function plotData(data) {
 
     var pathGenerator = d3.line()
     .x(function (d) { return scaleX(d.x); })
-    .y(function (d) { return scaleY(d.rank * 2); });
+    .y(function (d) { return scaleY(d.rank * 3); });
 
     paths.enter().append("path")
         .attr("class", "ranking")
