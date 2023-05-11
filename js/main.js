@@ -48,7 +48,7 @@ d3.csv("produce101.csv", parseLine, function (err, data) {
 // Path generator
 var pathGenerator = d3.line()
     .x(function (d) { return scaleX(d.x); })
-    .y(function (d) { return scaleY(d.rank); });
+    .y(function (d) { return scaleY(d.rank * 3); });
 
 // Set notes
 for (var i = 0; i < episodes.length; i++) {
@@ -234,7 +234,7 @@ function plotData(data) {
 
     var pathGenerator = d3.line()
     .x(function (d) { return scaleX(d.x); })
-    .y(function (d) { return scaleY(d.rank * 3); });
+    .y(function (d) { return scaleY(d.rank); });
 
     paths.enter().append("path")
         .attr("class", "ranking")
